@@ -5,22 +5,22 @@ import PackageDescription
 
 let package = Package(
     name: "MetalRenderKit",
+    platforms: [.iOS(.v17), .macOS(.v14)],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "MetalRenderKit",
-            targets: ["MetalRenderKit"]
-        ),
+        .library(name: "MetalRenderKit", targets: ["MetalRenderKit"]),
+    ],
+    dependencies: [
+         .package(url: "https://github.com/BurgerMike/Generator3D.git", from: "1.0.0")
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "MetalRenderKit"
+            name: "MetalRenderKit",
+            dependencies: [
+                .product(name: "Generator3D", package: "Generator3D"),
+                .product(name: "Generator3DMetalBridge", package: "Generator3D"),
+            ]
+            // IMPORTANTE: NO pongas `resources:` para Shaders.metal
         ),
-        .testTarget(
-            name: "MetalRenderKitTests",
-            dependencies: ["MetalRenderKit"]
-        ),
+        .testTarget(name: "MetalRenderKitTests", dependencies: ["MetalRenderKit"]),
     ]
 )
