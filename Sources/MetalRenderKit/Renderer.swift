@@ -5,7 +5,9 @@
 //  Created by Miguel Carlos Elizondo Mrtinez on 17/10/25.
 //
 
-import Metal, MetalKit, simd
+import Metal
+import MetalKit
+import simd
 import Generator3D
 
 public struct MRFrameUniforms {

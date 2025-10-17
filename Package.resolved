@@ -1,0 +1,15 @@
+{
+  "originHash" : "4973375fcbeee993ddd51ca00fb1815b8c13fdf607e29419dba6cf51cdef618e",
+  "pins" : [
+    {
+      "identity" : "generator3d",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/BurgerMike/Generator3D.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "c0e6af6a47de168bd238cf9ea417752732d19664"
+      }
+    }
+  ],
+  "version" : 3
+}
